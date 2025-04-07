@@ -67,3 +67,7 @@ docker-compose up --build -d
 ```
 
 5. Access the Wordpress site in your browser at `https://localhost`
+
+6. Access phpMyAdmin at `http://localhost:8080` with the following credentials:
+- Username: `root`
+- Password: `root`
