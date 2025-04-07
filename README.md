@@ -35,8 +35,12 @@ cd wordpress-docker
 3. Create ssl certificates
 ```bash
 cd nginx
+```
+```bash
 mkdir certs
 cd certs
+```
+```bash
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -keyout localhost.key \
   -out localhost.crt \
