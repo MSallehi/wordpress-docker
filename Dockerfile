@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     libzip-dev zip unzip \
     libpng-dev libjpeg-dev libfreetype6-dev \
     libonig-dev curl gnupg2 git \
-    && docker-php-ext-install zip pdo_mysql gd \
+    && docker-php-ext-install zip mysqli pdo_mysql gd \
+    && docker-php-ext-enable mysqli \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy custom PHP configurations
@@ -31,4 +32,4 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
     wp --info
 
 # Set working directory
-# WORKDIR /var/www/html
+WORKDIR /var/www/html

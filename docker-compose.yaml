@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   wordpress:
     build:
@@ -20,7 +18,7 @@ services:
       - wpnet
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: wp-db
     restart: always
     ports:
@@ -61,6 +59,8 @@ services:
       PMA_HOST: db
       PMA_USER: root
       PMA_PASSWORD: root
+    volumes:
+      - ./phpmyadmin/conf.d:/usr/local/etc/php/conf.d
     depends_on:
       - db
     networks:
